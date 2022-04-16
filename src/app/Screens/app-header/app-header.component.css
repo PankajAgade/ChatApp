@@ -1,0 +1,24 @@
+header{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    background: orange;
+}
+header > div{
+    display: flex;
+    column-gap: 40px;
+}
+header > div:first-child h1{
+    margin: 0;
+}
+
+header > div:last-child img{
+    width: 30px;
+}
+
+header > div > img{
+    width: 20px;
+    cursor: pointer;
+}

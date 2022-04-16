@@ -1,0 +1,14 @@
+.UserWrapper{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+}
+.userListContainer{
+    display: flex;
+    column-gap: 20px;
+    font-size: 22px;
+}
+.userListContainer > div:last-child {
+    cursor: pointer;
+}

@@ -1,0 +1,33 @@
+<app-app-header [title]="opponentUserData?.name" [back]="'users'"></app-app-header>
+<div>
+  <section class="msger">
+    <main class="msger-chat"  #scrollMe>
+  
+      <div class="msg" *ngFor="let message of messagesList" [ngClass]="{'left-msg': message.uid!==user.uid,'right-msg': message.uid===user.uid }">
+        <div
+          class="msg-img"
+          [ngStyle]="{'background-image': message.uid!==user.uid ? 'background-image: url(https://via.placeholder.com/60x60/CD7F32/000000/30?text={{user?.placeholder}})' : 'background-image: url(https://via.placeholder.com/60x60/F2D2BD/000000/30?text={{opponentUserData?.placeholder}})'}"
+          style="background-image: url(https://via.placeholder.com/60x60/CD7F32/000000/30?text={{user?.placeholder}})"
+        ></div>
+  
+        <div class="msg-bubble">
+          <div class="msg-info">
+            <div class="msg-info-name" *ngIf="message.uid!==user.uid">{{opponentUserData.name}}</div>
+            <div class="msg-info-name" *ngIf="message.uid===user.uid">{{user.name}}</div>
+            <div class="msg-info-time">{{message.time}}</div>
+          </div>
+  
+          <div class="msg-text">
+            {{message.message}}
+          </div>
+        </div>
+      </div>
+  
+    </main>
+    
+    <form class="msger-inputarea" >
+      <input type="text" class="msger-input" [ngModelOptions]="{standalone: true}" [(ngModel)]="mySideMessage" placeholder="Enter your message...">
+      <button type="submit" class="msger-send-btn" (click)="sendMessage()">Send</button>
+    </form>
+  </section>
+</div>

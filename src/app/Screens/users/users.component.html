@@ -1,0 +1,7 @@
+<app-app-header [title]="'Users'" [back]="'none'"></app-app-header>
+<div class="UserWrapper">
+    <div class="userListContainer" *ngFor="let user of users">
+        <div>{{user.id}}</div>
+        <div (click)="goToRoom(user)">{{user.name}}</div>
+    </div>
+</div>
